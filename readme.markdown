@@ -11,5 +11,6 @@ Pending changes:
 * Set the bounds of the scroll view to equal the bounds of the WrappingScrollView and add additional tiles as needed to fill the visible region.
 * Pad the scroll view with additional tiles to prevent a swipe from reaching the edge of the scroll view's content view while decelerating, currently this can halt deceleration prematurely.
 * Add a delegate protocol to report the relative scroll position of the WrappingScrollView
+* Add support for zooming
 
 Please submit features requests as github issues, feedback and additional requirements for this view are welcome.

@@ -15,10 +15,6 @@
 @synthesize scrollsVertically = scrollsVertically_;
 @synthesize scrollsHorizontally = scrollsHorizontally_;
 
-//- (void) awakeFromNib {
-//	[self constructScrollingContent];
-//}
-
 - (void)dealloc {
 	self.tileView = nil;
 	[scrollView_ release], scrollView_ = nil;
@@ -26,6 +22,7 @@
     [super dealloc];
 }
 
+//Creates a set of UIImageViews to display tiled images of the tileView, sets the frame and content size of the scroll view.
 - (void)constructScrollingContent {
 	[scrollView_ removeFromSuperview];
 	[scrollView_ release];
@@ -68,6 +65,7 @@
 	scrollView_.contentOffset = CGPointMake(self.tileView.bounds.size.width, self.tileView.bounds.size.height);
 }
 
+//Updates all the tiles to reflect the current state of the tileView's layer.
 - (void)reloadTiles {
 	UIGraphicsBeginImageContext(self.tileView.bounds.size);
 	[self.tileView.layer renderInContext:UIGraphicsGetCurrentContext()];
@@ -83,7 +81,7 @@
 	//multiple hitTest calls may be issuesd for a single point, only reposition the contentOffset once
 	if (false == CGPointEqualToPoint(point, lastHitTest_)) {
 		lastHitTest_ = point;
-		//offset tileView to be under point
+		//offset tileView to be under point so all touches are sent to the tileView, at the correct position
 		CGPoint currentPosition = scrollView_.contentOffset;
 		CGPoint origin = CGPointMake(tileView_.frame.origin.x, tileView_.frame.origin.y);
 		CGPoint newPosition = currentPosition;
@@ -102,7 +100,7 @@
 		}
 		scrollView_.contentOffset = newPosition;
 	}
-	//call default hitTest
+	//call default hitTest behavior
 	return [super hitTest:point withEvent:event];
 }
 
@@ -132,6 +130,7 @@
 #pragma mark UIScrollViewDelegate methods
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	//if the tileView has been scrolled out of site reposition the content offset to show the tileView rather than one of the image tiles
 	CGPoint offset = scrollView.contentOffset;
 	if (offset.x >= self.tileView.bounds.size.width * 2 || offset.x <= 0) {
 		offset.x = self.tileView.bounds.size.width;
