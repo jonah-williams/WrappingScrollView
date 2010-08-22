@@ -3,7 +3,7 @@
 //  WrappingScrollView
 //
 //  Created by Jonah Williams on 8/20/10.
-//  Copyright 2010 Jonah Williams. All rights reserved.
+//  Copyright 2010 Jonah Williams.
 //
 
 #import <UIKit/UIKit.h>
