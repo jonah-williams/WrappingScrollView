@@ -12,6 +12,7 @@
 @interface WrappingScrollView : UIView <UIScrollViewDelegate> {
 	UIScrollView *scrollView_;
 	NSMutableArray *tiles_;
+	CGPoint lastHitTest_;
 }
 
 @property(nonatomic, retain) IBOutlet UIView *tileView;
