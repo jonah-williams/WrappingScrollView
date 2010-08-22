@@ -13,11 +13,16 @@
 	UIScrollView *scrollView_;
 	NSMutableArray *tiles_;
 	CGPoint lastHitTest_;
+	NSUInteger horizontalTiles_;
+	NSUInteger verticalTiles_;
 }
 
 @property(nonatomic, retain) IBOutlet UIView *tileView;
+@property(nonatomic, assign) BOOL scrollsVertically;
+@property(nonatomic, assign) BOOL scrollsHorizontally;
 
 - (void)constructScrollingContent;
 - (void)reloadTiles;
+- (void)updateScrollViewContentSize;
 
 @end

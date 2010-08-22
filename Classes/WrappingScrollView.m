@@ -12,6 +12,8 @@
 @implementation WrappingScrollView
 
 @synthesize tileView = tileView_;
+@synthesize scrollsVertically = scrollsVertically_;
+@synthesize scrollsHorizontally = scrollsHorizontally_;
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
@@ -39,21 +41,23 @@
 	scrollView_.showsVerticalScrollIndicator = NO;
 	scrollView_.showsHorizontalScrollIndicator = NO;
 	scrollView_.bounces = NO;
+	scrollView_.scrollsToTop = NO;
 	[self addSubview:scrollView_];
 
-	
-	NSUInteger horizontalTiles = 3;
-	NSUInteger verticalTiles = 3;
+	scrollsVertically_ = YES;
+	scrollsHorizontally_ = YES;
+	horizontalTiles_ = 3;
+	verticalTiles_ = 3;
 	
 	[tiles_ release];
-	tiles_ = [[NSMutableArray alloc] initWithCapacity:horizontalTiles * verticalTiles - 1];
+	tiles_ = [[NSMutableArray alloc] initWithCapacity:horizontalTiles_ * verticalTiles_ - 1];
 
 	[scrollView_ addSubview:self.tileView];
 	self.tileView.frame = CGRectMake(self.tileView.bounds.size.width, self.tileView.bounds.size.height, self.tileView.bounds.size.width, self.tileView.bounds.size.height);
 	
-	scrollView_.contentSize = CGSizeMake(self.tileView.bounds.size.width * horizontalTiles, self.tileView.bounds.size.height * verticalTiles);
-	for (NSUInteger x = 0; x < horizontalTiles; x++) {
-		for (NSUInteger y = 0; y < verticalTiles; y++) {
+	[self updateScrollViewContentSize];
+	for (NSUInteger x = 0; x < horizontalTiles_; x++) {
+		for (NSUInteger y = 0; y < verticalTiles_; y++) {
 			if (x == 1 && y == 1) {
 				//do nothing, the tileView fills this tile
 			}
@@ -109,6 +113,20 @@
 	}
 	//call default hitTest
 	return [super hitTest:point withEvent:event];
+}
+
+- (void) setScrollsVertically:(BOOL) verticalScroll{
+	scrollsVertically_ = verticalScroll;
+	[self updateScrollViewContentSize];
+}
+
+- (void) setScrollsHorizontally:(BOOL) horizontalScroll{
+	scrollsHorizontally_ = horizontalScroll;
+	[self updateScrollViewContentSize];
+}
+
+- (void)updateScrollViewContentSize {
+	scrollView_.contentSize = CGSizeMake(self.tileView.bounds.size.width * (scrollsHorizontally_ ? horizontalTiles_ : 1), self.tileView.bounds.size.height * (scrollsVertically_ ? verticalTiles_ : 1));
 }
 
 #pragma mark UIScrollViewDelegate methods

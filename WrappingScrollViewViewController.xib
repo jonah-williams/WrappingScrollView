@@ -75,8 +75,8 @@
 										<int key="IBSelectedSegmentIndex">0</int>
 										<object class="NSArray" key="IBSegmentTitles">
 											<bool key="EncodedWithXMLCoder">YES</bool>
-											<string>First</string>
-											<string>Second</string>
+											<string>No</string>
+											<string>Yes!</string>
 										</object>
 										<object class="NSMutableArray" key="IBSegmentWidths">
 											<bool key="EncodedWithXMLCoder">YES</bool>
@@ -100,7 +100,7 @@
 										</object>
 									</object>
 								</object>
-								<string key="NSFrame">{{-15, -3}, {280, 193}}</string>
+								<string key="NSFrame">{{-15, -3}, {280, 213}}</string>
 								<reference key="NSSuperview" ref="143319753"/>
 								<object class="NSColor" key="IBUIBackgroundColor">
 									<int key="NSColorSpace">3</int>
