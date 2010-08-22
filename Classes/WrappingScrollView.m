@@ -15,16 +15,9 @@
 @synthesize scrollsVertically = scrollsVertically_;
 @synthesize scrollsHorizontally = scrollsHorizontally_;
 
-- (id)initWithFrame:(CGRect)frame {
-    if ((self = [super initWithFrame:frame])) {
-		[self constructScrollingContent];
-    }
-    return self;
-}
-
-- (void) awakeFromNib {
-	[self constructScrollingContent];
-}
+//- (void) awakeFromNib {
+//	[self constructScrollingContent];
+//}
 
 - (void)dealloc {
 	self.tileView = nil;
@@ -70,9 +63,7 @@
 			}
 		}
 	}
-	scrollView_.frame = CGRectMake(self.bounds.size.width / 2 - self.tileView.bounds.size.width / 2,
-								   self.bounds.size.height / 2 - self.tileView.bounds.size.height / 2,
-								   self.tileView.bounds.size.width, self.tileView.bounds.size.height);
+	scrollView_.frame = CGRectMake(0, 0, self.tileView.bounds.size.width, self.tileView.bounds.size.height);
 	[self reloadTiles];
 	scrollView_.contentOffset = CGPointMake(self.tileView.bounds.size.width, self.tileView.bounds.size.height);
 }
@@ -115,14 +106,23 @@
 	return [super hitTest:point withEvent:event];
 }
 
-- (void) setScrollsVertically:(BOOL) verticalScroll{
+- (void) setScrollsVertically:(BOOL) verticalScroll {
 	scrollsVertically_ = verticalScroll;
 	[self updateScrollViewContentSize];
 }
 
-- (void) setScrollsHorizontally:(BOOL) horizontalScroll{
+- (void) setScrollsHorizontally:(BOOL) horizontalScroll {
 	scrollsHorizontally_ = horizontalScroll;
 	[self updateScrollViewContentSize];
+}
+
+- (void) setTileView:(UIView *) tileView {
+	if (tileView != tileView_) {
+		[tileView_ release];
+		tileView_ = tileView;
+		[tileView_ retain];
+		[self constructScrollingContent];
+	}
 }
 
 - (void)updateScrollViewContentSize {
