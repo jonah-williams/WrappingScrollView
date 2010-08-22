@@ -6,6 +6,8 @@ The WrappingScrollView will create a UIScrollView subview with bounds equal to t
 
 At this point the WrappingScrollView will not automatically update it's tiled views, `-reloadTiles` must be called to trigger the tiles to be redrawn if the original tileView's display changes.
 
+![WrappingScrollView](http://github.com/jonah-carbonfive/WrappingScrollView/raw/master/images/WrappingScrollViewExample.png)
+
 Pending changes:
 
 * Set the bounds of the scroll view to equal the bounds of the WrappingScrollView and add additional tiles as needed to fill the visible region.
