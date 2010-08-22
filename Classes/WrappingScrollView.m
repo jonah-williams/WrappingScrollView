@@ -8,7 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 #import "WrappingScrollView.h"
-#import "ProxyView.h"
 
 @implementation WrappingScrollView
 
@@ -16,8 +15,13 @@
 
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
+		[self constructScrollingContent];
     }
     return self;
+}
+
+- (void) awakeFromNib {
+	[self constructScrollingContent];
 }
 
 - (void)dealloc {
@@ -28,7 +32,7 @@
 }
 
 - (void)constructScrollingContent {
-	//TODO: construct in awakeFromNib or initWithFrame instead
+	[scrollView_ removeFromSuperview];
 	[scrollView_ release];
 	scrollView_ = [[UIScrollView alloc] initWithFrame:self.frame];
 	scrollView_.delegate = self;
@@ -55,13 +59,9 @@
 			}
 			else {
 				CGRect rect = CGRectMake(self.tileView.bounds.size.width * x, self.tileView.bounds.size.height * y, self.tileView.bounds.size.width, self.tileView.bounds.size.height);
-				UIImageView *tile = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.tileView.bounds.size.width, self.tileView.bounds.size.height)];
+				UIImageView *tile = [[UIImageView alloc] initWithFrame:rect];
 				[tiles_ addObject:tile];
-				ProxyView *proxy = [[ProxyView alloc] initWithFrame:rect];
-				[proxy addSubview:tile];
-				proxy.destinationView = self.tileView;
-				[scrollView_ addSubview:proxy];
-				[proxy release];
+				[scrollView_ addSubview:tile];
 				[tile release];
 			}
 		}
@@ -134,10 +134,6 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 	
-}
-
-- (void)action:(id)sender forEvent:(UIEvent *)event {
-	[self reloadTiles];
 }
 
 @end

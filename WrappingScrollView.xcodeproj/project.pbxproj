@@ -19,7 +19,8 @@
 		8CDDD7AE121F97560048B94A /* fist_bump.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8CDDD7AD121F97560048B94A /* fist_bump.jpg */; };
 		8CDDD87B1220574A0048B94A /* bowl.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 8CDDD87A1220574A0048B94A /* bowl.jpeg */; };
 		8CDDD90F12206AD50048B94A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDDD90E12206AD50048B94A /* QuartzCore.framework */; };
-		8CDDD94312208F4A0048B94A /* ProxyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDD94212208F4A0048B94A /* ProxyView.m */; };
+		8CDDDBF5122179290048B94A /* IMG_0340.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8CDDDBF4122179290048B94A /* IMG_0340.jpg */; };
+		8CDDDC1E12217B000048B94A /* GuageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CDDDC1D12217B000048B94A /* GuageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +41,9 @@
 		8CDDD7AD121F97560048B94A /* fist_bump.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fist_bump.jpg; sourceTree = "<group>"; };
 		8CDDD87A1220574A0048B94A /* bowl.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bowl.jpeg; sourceTree = "<group>"; };
 		8CDDD90E12206AD50048B94A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		8CDDD94112208F4A0048B94A /* ProxyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyView.h; sourceTree = "<group>"; };
-		8CDDD94212208F4A0048B94A /* ProxyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyView.m; sourceTree = "<group>"; };
+		8CDDDBF4122179290048B94A /* IMG_0340.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_0340.jpg; sourceTree = "<group>"; };
+		8CDDDC1C12217B000048B94A /* GuageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuageView.h; sourceTree = "<group>"; };
+		8CDDDC1D12217B000048B94A /* GuageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuageView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* WrappingScrollView-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "WrappingScrollView-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,8 +71,8 @@
 				28D7ACF70DDB3853001CB0EB /* WrappingScrollViewViewController.m */,
 				8CDDD79B121F78BD0048B94A /* WrappingScrollView.h */,
 				8CDDD79C121F78BD0048B94A /* WrappingScrollView.m */,
-				8CDDD94112208F4A0048B94A /* ProxyView.h */,
-				8CDDD94212208F4A0048B94A /* ProxyView.m */,
+				8CDDDC1C12217B000048B94A /* GuageView.h */,
+				8CDDDC1D12217B000048B94A /* GuageView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -107,6 +109,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8CDDDBF4122179290048B94A /* IMG_0340.jpg */,
 				8CDDD87A1220574A0048B94A /* bowl.jpeg */,
 				8CDDD7AD121F97560048B94A /* fist_bump.jpg */,
 				2899E5210DE3E06400AC0155 /* WrappingScrollViewViewController.xib */,
@@ -180,6 +183,7 @@
 				2899E5220DE3E06400AC0155 /* WrappingScrollViewViewController.xib in Resources */,
 				8CDDD7AE121F97560048B94A /* fist_bump.jpg in Resources */,
 				8CDDD87B1220574A0048B94A /* bowl.jpeg in Resources */,
+				8CDDDBF5122179290048B94A /* IMG_0340.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +198,7 @@
 				1D3623260D0F684500981E51 /* WrappingScrollViewAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* WrappingScrollViewViewController.m in Sources */,
 				8CDDD79D121F78BD0048B94A /* WrappingScrollView.m in Sources */,
-				8CDDD94312208F4A0048B94A /* ProxyView.m in Sources */,
+				8CDDDC1E12217B000048B94A /* GuageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

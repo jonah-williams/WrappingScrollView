@@ -166,10 +166,10 @@
 					<object class="IBCocoaTouchEventConnection" key="connection">
 						<string key="label">action:forEvent:</string>
 						<reference key="source" ref="967866642"/>
-						<reference key="destination" ref="143319753"/>
+						<reference key="destination" ref="372490531"/>
 						<int key="IBEventType">13</int>
 					</object>
-					<int key="connectionID">21</int>
+					<int key="connectionID">22</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -289,7 +289,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">21</int>
+			<int key="maxID">22</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -297,17 +297,6 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WrappingScrollView</string>
 					<string key="superclassName">UIView</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">action:forEvent:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">action:forEvent:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">action:forEvent:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">tileView</string>
 						<string key="NS.object.0">UIView</string>
@@ -327,6 +316,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">WrappingScrollViewViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">action:forEvent:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">action:forEvent:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">action:forEvent:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">scrollView</string>
 						<string key="NS.object.0">WrappingScrollView</string>

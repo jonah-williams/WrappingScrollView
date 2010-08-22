@@ -12,11 +12,11 @@
 
 @interface WrappingScrollViewAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
-    WrappingScrollViewViewController *viewController;
+    UIViewController *viewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet WrappingScrollViewViewController *viewController;
+@property (nonatomic, retain) IBOutlet UIViewController *viewController;
 
 @end
 

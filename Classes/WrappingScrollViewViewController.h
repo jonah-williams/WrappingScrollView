@@ -15,5 +15,7 @@
 
 @property(nonatomic, retain) IBOutlet WrappingScrollView *scrollView;
 
+- (IBAction)action:(id)sender forEvent:(UIEvent *)event;
+
 @end
 

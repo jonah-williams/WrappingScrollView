@@ -20,6 +20,4 @@
 - (void)constructScrollingContent;
 - (void)reloadTiles;
 
-- (IBAction)action:(id)sender forEvent:(UIEvent *)event;
-
 @end

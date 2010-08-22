@@ -27,8 +27,6 @@
 	[self.scrollView constructScrollingContent];
 }
 
-
-
 /*
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -42,6 +40,10 @@
     [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
+}
+
+- (void)action:(id)sender forEvent:(UIEvent *)event {
+	[scrollView_ reloadTiles];
 }
 
 @end
