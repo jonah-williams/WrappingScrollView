@@ -1,6 +1,7 @@
 //
 //  WrappingScrollView.h
 //  WrappingScrollView
+//  http://github.com/jonah-carbonfive/WrappingScrollView
 //
 //  Created by Jonah Williams on 8/20/10.
 //  Copyright 2010 Jonah Williams.
